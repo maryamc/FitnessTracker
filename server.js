@@ -14,7 +14,7 @@ app.use(express.static("public"));
 
 //mongo connection
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/still-forest-94049',
+    process.env.MONGODB_URI || 'mongodb://localhost/workout',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
