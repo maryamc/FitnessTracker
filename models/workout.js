@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 //workout schema will provide the table that will be seeded in the db
-const workoutSchema = new Schema({
+const WorkoutSchema = new Schema({
     day: {
         // shows and updates the date of workout
         type: Date,
@@ -37,7 +37,7 @@ const workoutSchema = new Schema({
     ]
 });
 
-const Workout = mongoose.model("Workout",workoutSchema);
+const Workout = mongoose.model("Workout",WorkoutSchema);
 
 //exporting to "import" to index.js
 module.exports = Workout;
