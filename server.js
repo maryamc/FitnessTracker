@@ -2,9 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 
+const app = express();
 const PORT = process.env.PORT || 3000;
 
-const app = express();
 app.use(logger("dev"));
 
 app.use(express.urlencoded({extended:true}));
@@ -25,8 +25,8 @@ mongoose.connect(
 
 
 //routes
-require("./routes/api-routes")(app);
-require("./routes/html-routes")(app);
+app.use(require("./routes/api-routes"));
+app.use(require("./routes/html-routes"));
 
 app.listen(PORT,() => {
     console.log(`'App running on port ${PORT}'`)
